@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication Table</title>
+        <style>
+            .cell {
+                display: inline-block;
+                width: 30px; height: 30px;
+                text-align: right;
+            }
+            .header {
+                background: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Multiplication Table</h1>
+        <!--Coach David R helped me with fixing a issue with Span and line break.-->
+
+        <!--Bonus for changing multiplication table, not working at the moment-->
+        <form>
+            X Factor: <input type = "number" name = "xfactor" value = "10"><br>
+            Y Factor: <input type = "number" name = "yfactor" value = "10"><br>
+            Change color?: <input type = "text" name = "background" value = "lightblue"><br>
+            <input type = "submit" name = "submit">
+        </form>
+
+        <script>
+            let background = document.querySelector('.header');
+            let xfactor = document.querySelector('xfactor');
+            let yfactor = document.querySelector('yfactor');
+            
+            // output the header row
+            document.write('<span class="cell header">&times;</span>');
+            for (let i = 0; i <= 10; i++) {
+                document.write('<span class="cell header">' + i + '</span>');
+            }
+            document.write('<br>');
+
+            //Adds columns to table
+            for (let y = 0; y <= 10; y++){
+                document.write('<span class="cell header">' + y + '</span>');
+                
+                //Multiplies rows by columns
+                for (let x = 0; x <= 10; x++){
+                    document.write('<span class="cell">' + (x * y) + '</span>');
+                }
+                document.write('<br>');
+            }
+            // TODO: Write two nested for loops to output the rest of the multiplication table
+        </script>
+    </body>
+</html>
